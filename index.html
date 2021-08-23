@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Text-Editor</title>
+		<link rel="stylesheet" type="text/css" href="./index.css">
+	</head>
+	<body>
+		<!-- <div class="container"> -->
+		<div id="navbar">
+			<img src="./logo.png" class="logo">
+			<!-- <a style="margin-top:20px;" class="btn cta bg">Publish</a> -->
+		</div>
+		<div class = "editor">
+			<div class="article">
+				<textarea class="resizeTitle title" placeholder="Title" rows="1" cols="30"></textarea>
+				<div id="content" class="resizeStory story" placeholder="Tell your story..." contenteditable='true'></div>
+			</div>
+		</div>
+		<div id="footer">
+			<span id="help">
+			<img id="help" src="https://img.icons8.com/carbon-copy/30/000000/question-mark.png"/>
+			</span>
+			<span class = "toolkit">
+			<img src="https://img.icons8.com/plumpy/30/000000/bold.png" class = "command" data-command = "strong"/>
+			<img src="https://img.icons8.com/metro/30/000000/italic.png" class = "command" data-command = "address">
+			<img src="https://img.icons8.com/wired/30/000000/link.png"  onclick = "openLinkModal()"/> 
+			&nbsp;&nbsp;
+			<img src="https://img.icons8.com/plumpy/38/000000/header-1.png" class = "command" data-command = "h1"/>
+			<img src="https://img.icons8.com/plumpy/38/000000/header-2.png" class = "command" data-command = "h2"/>
+			&nbsp;&nbsp;
+			<img src="https://img.icons8.com/metro/30/000000/numbered-list.png" class = "command" data-command = "ol"/>
+			<img src="https://img.icons8.com/windows/30/000000/separated-lists.png" class = "command" data-command = "ul"/>
+			&nbsp;&nbsp;
+			<img src="https://img.icons8.com/dotty/40/000000/quote-right.png" class = "command" data-command = "blockquote"/>
+			</span>
+		</div>
+		<div id="test" style="display:none";>
+			
+		</div>
+		<div id="myModal" class="modal">
+
+		<div class="modal-content">
+			<div><strong>URL</strong></div>
+			<br>
+			<div><input class="linkURL" type="url" value=""></div>
+			<br>
+			<div>
+			<button id="LinkBtn">Add Link</button>
+			<button onclick="closemodal()">Cancel</button>
+			</div>
+		</div>
+
+		</div>
+		
+		<script type="text/javascript">
+		textarea = document.querySelector(".resizeTitle");
+        textarea.addEventListener('input', autoResize, false);
+     	function autoResize() {
+            this.style.height = 'auto';
+            this.style.height = this.scrollHeight + 'px';
+        }
+        textarea = document.querySelector(".resizeStory");
+        textarea.addEventListener('input', autoResize, false);
+     	function autoResize() {
+            this.style.height = 'auto';
+            this.style.height = this.scrollHeight + 'px';
+        }
+
+
+      </script>
+
+	</body>
+	<script type="text/javascript" src="./index.js"></script>
+</html>
